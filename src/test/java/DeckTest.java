@@ -24,4 +24,19 @@ public class DeckTest {
         deck.addCard(card);
         assertEquals(1, deck.countCards());
     }
+
+    @Test
+    public void hasFullDeck(){
+        deck.addAllCardsToDeck();
+        assertEquals(52, deck.countCards());
+    }
+
+    @Test
+    public void canDealCard(){
+        deck.addAllCardsToDeck();
+        deck.shuffleCards();
+        deck.dealCard();
+        assertEquals(51, deck.countCards());
+
+    }
 }
